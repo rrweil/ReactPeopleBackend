@@ -13,7 +13,7 @@ export default function PersonForm({ person, onTextChange, onAddClick, isAdding,
                 <input type="text" placeholder="Last Name" className="form-control" name="lastName" value={lastName} onChange={onTextChange} />
             </div>
             <div className="col-md-3" >
-                <input type="text" placeholder="Age Name" className="form-control" name="age" value={age} onChange={onTextChange} />
+                <input type="text" placeholder="Age" className="form-control" name="age" value={age} onChange={onTextChange} />
             </div>
             <div className="col-md-3" >
                 {!isEditing && <button className="btn btn-primary btn-block" onClick={onAddClick} disabled={isAdding}>Add </button>}

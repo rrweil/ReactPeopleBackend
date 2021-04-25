@@ -1,8 +1,11 @@
 ﻿import React from 'react';
 
-export default function PersonRow({ person, onDeleteClick , onEditClick}) {
-    const { firstName, lastName, age} = person;
-    return (<tr >
+export default function PersonRow({ person, onDeleteClick, onEditClick, onCheckboxChange, isChecked}) {
+    const { firstName, lastName, age, id} = person;
+    return (<tr key={id}>
+        <td>
+            <input type="checkbox" className="form-check form-control" onChange={onCheckboxChange} checked={isChecked}/> 
+        </td>
         <td>{firstName}</td>
         <td>{lastName}</td>
         <td>{age}</td>

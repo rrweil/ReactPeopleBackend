@@ -34,6 +34,15 @@ namespace HW4._21._21ReactPeople.Data
             ctx.Database.ExecuteSqlInterpolated($"DELETE FROM People WHERE Id = {person.Id}");
         }
 
+        public void DeletePeople (List<Person> people)
+        {
+            using var ctx = new PeopleDbContext(_connectionString);
+            foreach (Person p in people)
+            {
+                ctx.Database.ExecuteSqlInterpolated($"DELETE FROM People WHERE Id = {p.Id}");
+            }
+        }
+
         public void EditPerson(Person person)
         {
             using var ctx = new PeopleDbContext(_connectionString);

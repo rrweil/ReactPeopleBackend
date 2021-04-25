@@ -34,7 +34,6 @@ namespace HW4._21._21ReactPeople.Web.Controllers
         [Route("AddPerson")]
         public void AddPerson (Person person)
         {
-            //Thread.Sleep(500);
             var repo = new PeopleRepository(_connectionString);
             repo.AddPerson(person);
 
@@ -56,5 +55,14 @@ namespace HW4._21._21ReactPeople.Web.Controllers
             repo.EditPerson(person);
 
         }
+
+        [HttpPost]
+        [Route("DeletePeople")]
+        public void DeletePeople (List<Person> peopleToDelete)
+        {
+            var repo = new PeopleRepository(_connectionString);
+            repo.DeletePeople(peopleToDelete);
+        }
+
     }
 }
